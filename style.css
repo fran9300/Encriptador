@@ -55,6 +55,11 @@ textarea::placeholder {
     text-align: left;
 }
 
+#aviso-caracteres{
+    padding: 0px 0px 20px 18px;
+    color: rgb(80 74 74);
+}
+
 
 .grupo-botones {
     margin-bottom: 1rem;

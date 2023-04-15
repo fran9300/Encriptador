@@ -34,7 +34,7 @@ btnBotonBorrar.addEventListener('click', function() {
   miTextarea.value = "";
   miResultado1.textContent = "Ningun mensaje fue encontrado";
   miResultado2.textContent = "ingrese el texto en el cuadro de la izquierda, luego presione una encriptar o desencriptar";
-  miImagen.src = "miImagen.png";
+  miImagen.src = "imagenes/miImagen.png";
 
 });
 
@@ -48,29 +48,42 @@ miBotonCopiar.addEventListener('click', function() {
 
 //Funciones para encriptar y desenmcriptar
 function encriptador(palabraInicial) {
-
+    
+    
     palabraInicial = palabraInicial.toLowerCase();
 
+    let testCaracteres = /^[a-z]+$/.test(palabraInicial);
+
     let nuevaPalabra = "";
+
+
+    if(testCaracteres) {
     
-    for (let i = 0; i < palabraInicial.length; i++) {
-    let letra = palabraInicial.charAt(i);
-   
-    if (letra === "a") {
-      nuevaPalabra += "ai";
-    } else if (letra === "e") {
-      nuevaPalabra += "enter";
-    } else if (letra === "i") {
-      nuevaPalabra += "imes";
-    } else if (letra === "o") {
-      nuevaPalabra += "ober";
-    } else if (letra === "u") {
-      nuevaPalabra += "ufat";
+      for (let i = 0; i < palabraInicial.length; i++) {
+      let letra = palabraInicial.charAt(i);
+    
+      if (letra === "a") {
+        nuevaPalabra += "ai";
+      } else if (letra === "e") {
+        nuevaPalabra += "enter";
+      } else if (letra === "i") {
+        nuevaPalabra += "imes";
+      } else if (letra === "o") {
+        nuevaPalabra += "ober";
+      } else if (letra === "u") {
+        nuevaPalabra += "ufat";
+      } else {
+        nuevaPalabra += letra;
+      }
+
+      }
+      return nuevaPalabra;
     } else {
-      nuevaPalabra += letra;
+
+      return nuevaPalabra = "error, introduzca solo letras minúsclas y sin acentos";
+
     }
-}
-    return nuevaPalabra;
+    
 }
 
 
@@ -78,15 +91,24 @@ function desencriptador(palabraInicial) {
 
     let nuevaPalabra = palabraInicial.toLowerCase();
 
+    let testCaracteres = /^[a-z]+$/.test(palabraInicial);
+
+    if(testCaracteres) {
     nuevaPalabra = nuevaPalabra
     .replace(/enter/g, "e")
     .replace(/imes/g, "i")
     .replace(/ai/g, "a")
     .replace(/ober/g, "o")
     .replace(/ufat/g, "u");
-    
 
     return nuevaPalabra;
+    } else {
+
+      return nuevaPalabra = "error, introduzca solo letras minúsclas y sin acentos";
+
+    }
+
+    
 }
 
 
