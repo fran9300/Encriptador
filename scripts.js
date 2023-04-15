@@ -52,12 +52,7 @@ function encriptador(palabraInicial) {
     
     palabraInicial = palabraInicial.toLowerCase();
 
-    let testCaracteres = /^[a-z]+$/.test(palabraInicial);
-
     let nuevaPalabra = "";
-
-
-    if(testCaracteres) {
     
       for (let i = 0; i < palabraInicial.length; i++) {
       let letra = palabraInicial.charAt(i);
@@ -76,14 +71,9 @@ function encriptador(palabraInicial) {
         nuevaPalabra += letra;
       }
 
-      }
-      return nuevaPalabra;
-    } else {
+    } 
 
-      return nuevaPalabra = "error, introduzca solo letras minúsclas y sin acentos";
-
-    }
-    
+    return nuevaPalabra;
 }
 
 
@@ -91,9 +81,6 @@ function desencriptador(palabraInicial) {
 
     let nuevaPalabra = palabraInicial.toLowerCase();
 
-    let testCaracteres = /^[a-z]+$/.test(palabraInicial);
-
-    if(testCaracteres) {
     nuevaPalabra = nuevaPalabra
     .replace(/enter/g, "e")
     .replace(/imes/g, "i")
@@ -102,13 +89,6 @@ function desencriptador(palabraInicial) {
     .replace(/ufat/g, "u");
 
     return nuevaPalabra;
-    } else {
-
-      return nuevaPalabra = "error, introduzca solo letras minúsclas y sin acentos";
-
-    }
-
-    
 }
 
 
